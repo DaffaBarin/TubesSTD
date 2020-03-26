@@ -14,32 +14,32 @@ struct infotypeBase {
     float rerata;
 };
 
-typedef struct Base *connect;
+typedef struct Base *relateAddress;
 
 struct Base {
     address1 lapas;
     address2 tahanan;
-    connect next;
-    connect prev;
+    relateAddress next;
+    relateAddress prev;
     infotypeBase info;
 };
 
 struct ListBase {
-    connect first;
-    connect last;
+    relateAddress first;
+    relateAddress last;
 };
 //adress1 parent, address2 child
 void createListBase(ListBase &L);
-connect CreateElmBase(address1 P, address2 Q);
-void insertBase(ListBase &L, connect R);
-void deleteFirstBase(ListBase &L, connect &R);
-void deleteAfterBase(ListBase &L, connect Prec, connect &P);
-void deleteLastBase(ListBase &L, connect &R);
-void DeleteSpesificBase(ListBase &L, connect &R);
-void deleteListSpesificBase1(ListBase &L, connect P, connect Q);
-void deleteListSpesificBase2(ListBase &L, connect P, connect Q);
-connect findElmBase1(ListBase &L, address1 P, address2 Q);
-connect findElmBase2(ListBase &L, address1 P, address2 Q);
+relateAddress CreateElmBase(address1 P, address2 Q);
+void insertBase(ListBase &L, relateAddress R);
+void deleteFirstBase(ListBase &L, relateAddress &R);
+void deleteAfterBase(ListBase &L, relateAddress Prec, relateAddress &P);
+void deleteLastBase(ListBase &L, relateAddress &R);
+void DeleteSpesificBase(ListBase &L, relateAddress &R);
+void deleteListSpesificBase1(ListBase &L, relateAddress P, relateAddress Q);
+void deleteListSpesificBase2(ListBase &L, relateAddress P, relateAddress Q);
+relateAddress findElmBase1(ListBase &L, address1 P, address2 Q);
+relateAddress findElmBase2(ListBase &L, address1 P, address2 Q);
 void printInfoBase(ListBase L);
 
 float nilaiRerataUsia(ListBase L);
