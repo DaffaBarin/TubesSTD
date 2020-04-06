@@ -32,6 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="listChild.cpp" />
+		<Unit filename="listChild.h" />
+		<Unit filename="listParent.cpp" />
+		<Unit filename="listParent.h" />
+		<Unit filename="listRelasi.cpp" />
+		<Unit filename="listRelasi.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
