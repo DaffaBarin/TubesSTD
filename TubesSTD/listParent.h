@@ -1,6 +1,10 @@
 #include <iostream>
 
-
+#define Nil          NULL
+#define info(P)      (P)->info
+#define prev(P)		 (P)->prev
+#define next(P)      (P)->next
+#define first(L)     (L).First
 using namespace std;
 
 struct infotypeParent {
@@ -21,6 +25,7 @@ struct List1 {
     address1 first;
 };
 
+boolean IsEmpty(List1 &L);
 void createListParent(List1 &L);
 address1 CreateElmParent(infotypeParent st);
 void insertFirstParent(List1 &L, address1 P);
