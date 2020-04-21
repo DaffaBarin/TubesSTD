@@ -1,45 +1,45 @@
-#ifndef LISTRELASI_H_INCLUDED
-#define LISTRELASI_H_INCLUDED
+#ifndef List_RelasiELASI_H_INCLUDED
+#define List_RelasiELASI_H_INCLUDED
 
 #include <iostream>
 #include "listParent.h"
 #include "listChild.h"
 
 using namespace std;
-
+/*
 struct infotypeRelasi {
     int noTahanan;
     int usia;
     int durasi;
     float rerata;
 };
-
+*/
 typedef struct Relasi *relateAddress;
 
 struct Relasi {
-    address1 lapas;
-    address2 tahanan;
+    address_Parent lapas;
+    address_Child tahanan;
     relateAddress next;
     relateAddress prev;
-    infotypeRelasi info;
+    //infotypeRelasi info;
 };
 
-struct ListR {
+struct List_Relasi {
     relateAddress first;
     relateAddress last;
 };
-//adress1 parent, address2 child
-void createListR(ListR &L);
-relateAddress CreateElmRelasi(address1 P, address2 Q);
-void insertRelasi(ListR &L, relateAddress R);
-void deleteFirstBase(ListR &L, relateAddress &R);
-void deleteAfterRelasi(ListR &L, relateAddress Prec, relateAddress &P);
-void deleteLastRelasi(ListR &L, relateAddress &R);
-void deleteSpesificRelasi(ListR &L, relateAddress &R);
-void deleteSpesificRelasi1(ListR &L, relateAddress P, relateAddress Q);
-void deleteSpesificRelasi2(ListR &L, relateAddress P, relateAddress Q);
-relateAddress findElmRelasi1(ListR &L, address1 P, address2 Q);
-relateAddress findElmRelasi2(ListR &L, address1 P, address2 Q);
-void printInfoRelasi(ListR L);
+//adress1 parent, address_Child child
+void createList_Relasi(List_Relasi &L);
+relateAddress CreateElmRelasi(address_Parent P, address_Child Q);
+void insertRelasi(List_Relasi &L, relateAddress R);
+void deleteFirstBase(List_Relasi &L, relateAddress &R);
+void deleteAfterRelasi(List_Relasi &L, relateAddress Prec, relateAddress &P);
+void deleteLastRelasi(List_Relasi &L, relateAddress &R);
+void deleteSpesificRelasi(List_Relasi &L, relateAddress &R);
+void deleteSpesificRelasi1(List_Relasi &L, relateAddress P, relateAddress Q);
+void deleteSpesificRelasi2(List_Relasi &L, relateAddress P, relateAddress Q);
+relateAddress findElmRelasi1(List_Relasi &L, address_Parent P, address_Child Q);
+relateAddress findElmRelasi2(List_Relasi &L, address_Parent P, address_Child Q);
+void printInfoRelasi(List_Relasi L);
 
-#endif // LISTRELASI_H_INCLUDED
+#endif // List_RelasiELASI_H_INCLUDED

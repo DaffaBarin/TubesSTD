@@ -9,26 +9,27 @@ struct infotypeParent {
     int luasPenjara;
 };
 
-typedef struct parent *address1;
+typedef struct parent *address_parent;
 
 struct parent {
     infotypeParent info;
-    address1 next;
-    address1 prev;
+    address_parent next;
+    address_parent prev;
 };
 
-struct List1 {
-    address1 first;
+struct List_Parent {
+    address_parent first;
 };
 
-void createListParent(List1 &L);
-address1 CreateElmParent(infotypeParent st);
-void insertFirstParent(List1 &L, address1 P);
-void insertAfterParent(List1 &L, address1 Prec, address1 P);
-void insertLastParent(List1 &L, address1 P);
-void deleteFirstParent(List1 &L, address1 &P);
-void deleteAfterParent(List1 &L, address1 Prec, address1 &P);
-void deleteLastParent(List1 &L, address1 &P);
-void deleteSpesificParent(List1 &L, string X);
-address1 findElmParent(List1 &L, string X);
-void printInfoParent(List1 L);
+void createListParent(List_Parent &L);
+address_parent CreateElmParent(infotypeParent X);
+void insertFirstParent(List_Parent &L, address_parent P);
+void insertAfterParent(List_Parent &L, address_parent Prec, address_parent P);
+void insertLastParent(List_Parent &L, address_parent P);
+//void insertSortedParent(List_Parent &L, infotypeParent X);
+void deleteFirstParent(List_Parent &L, address_parent &P);
+void deleteAfterParent(List_Parent &L, address_parent Prec, address_parent &P);
+void deleteLastParent(List_Parent &L, address_parent &P);
+void deleteSpesificParent(List_Parent &L, string X);
+address_parent findElmParent(List_Parent &L, string X);
+void printInfoParent(List_Parent L);
