@@ -10,6 +10,7 @@ struct infotypeParent {
     string namaLapas;
     string IDLapas;
     int luasLapas;
+    int countLapas;
 };
 
 typedef struct parent *address_parent;

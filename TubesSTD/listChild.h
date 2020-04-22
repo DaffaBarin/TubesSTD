@@ -9,6 +9,7 @@ struct infotypeChild {
     string namaTahanan;
     string IDTahanan;
     int usiaTahanan;
+    int countTahanan;
 };
 
 typedef struct child *address_child;

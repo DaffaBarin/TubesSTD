@@ -1,4 +1,3 @@
-#include <iostream>
 #include "listRelasi.h"
 
 using namespace std;
@@ -13,6 +12,8 @@ relateAddress CreateElmRelasi(address_parent P, address_child Q){
     R -> tahanan = Q;
     R -> next = NULL;
     R -> prev = NULL;
+    P -> info.countLapas++;
+    Q -> info.countTahanan++;
     return R;
 }
 void insertRelasi(List_Relasi &L, relateAddress R){
@@ -48,8 +49,27 @@ void deleteLastRelasi(List_Relasi &L, relateAddress &R){
     R = Q -> next;
     Q -> next = NULL;
 }
-void deleteSpesificRelasi(List_Relasi &L, relateAddress &R){
-
+void deleteSpesificRelasi(List_Relasi &L, string out){
+    relateAddress R = L.first;
+    if (R != NULL){
+        if (L.first -> lapas -> info.namaLapas == out){
+            deleteFirstRelasi(L,R);
+        } else if (L.first -> tahanan -> info.namaTahanan == out){
+            deleteLastRelasi(L,R);
+        } else {
+            while (R != NULL && R -> lapas -> info.namaLapas != out && R -> tahanan -> info.namaTahanan != out){
+                R = R -> next;
+            }
+            if (R -> lapas -> info.namaLapas == out || R -> tahanan -> info.namaTahanan == out) {
+                deleteAfterRelasi(L,R -> prev,R);
+            }else {
+                cout<<out<<" tidak ada pada relasi."<<endl;
+            }
+        }
+    }else {
+        cout<<"Tidak ada relasi saat ini."<<endl;
+    }
+    cout<<endl;
 }
 relateAddress findElmRelasiParent(List_Relasi &L, address_parent P){
     relateAddress R = L.first;
@@ -78,4 +98,5 @@ void printInfoRelasi(List_Relasi L){
         cout<<R -> lapas -> info.namaLapas;
         R = R -> next;
     }
+    cout<<endl;
 }

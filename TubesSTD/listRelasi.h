@@ -35,7 +35,7 @@ void insertRelasi(List_Relasi &L, relateAddress R);
 void deleteFirstRelasi(List_Relasi &L, relateAddress &R);
 void deleteAfterRelasi(List_Relasi &L, relateAddress Prec, relateAddress &R);
 void deleteLastRelasi(List_Relasi &L, relateAddress &R);
-void deleteSpesificRelasi(List_Relasi &L, relateAddress &R);
+void deleteSpesificRelasi(List_Relasi &L, string out);
 relateAddress findElmRelasiParent(List_Relasi &L, address_parent P);
 relateAddress findElmRelasiChild(List_Relasi &L,address_child Q);
 void printInfoRelasi(List_Relasi L);
