@@ -2,7 +2,7 @@
 #define Nil NULL
 #define info(P) (P)->info
 #define next(P) (P)->next
-#define First(L) ((L).First)
+#define first(L) ((L).First)
 using namespace std;
 
 struct infotypeChild {
