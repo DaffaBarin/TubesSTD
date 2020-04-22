@@ -1,4 +1,7 @@
 #include <iostream>
+#include <sstream>
+#include <cstdlib>
+#include <ctime>
 
 
 using namespace std;
@@ -35,3 +38,5 @@ void deleteLastParent(List_Parent &L, address_parent &P);
 void deleteSpesificParent(List_Parent &L, string X);
 address_parent findElmParent(List_Parent L, string X);
 void printInfoParent(List_Parent L);
+//string 3 digit
+string generatorIDParent();

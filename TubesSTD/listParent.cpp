@@ -131,3 +131,14 @@ void printInfoParent(List_Parent L){
     }
     cout<<endl;
 }
+
+string generatorIDParent(){
+    int r;
+    stringstream ss;
+    srand((int)time(0));
+    r = (rand() % 850) + 1;
+    ss<<r;
+    string s;
+    ss>>s;
+    return s;
+}

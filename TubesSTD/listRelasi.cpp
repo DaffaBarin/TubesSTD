@@ -52,11 +52,30 @@ void deleteSpesificRelasi(List_Relasi &L, relateAddress &R){
 
 }
 relateAddress findElmRelasiParent(List_Relasi &L, address_parent P){
-
+    relateAddress R = L.first;
+    while (R != NULL){
+      if (R -> lapas != P){
+        return R;
+      }
+      R = R -> next;
+    }
+    return NULL;
 }
-relateAddress findElmRelasiChild(List_Relasi &L,address_child Q){
-
+relateAddress findElmRelasiChild(List_Relasi &L, address_child Q){
+    relateAddress R = L.first;
+    while (R != NULL){
+      if (R -> tahanan != Q){
+        return R;
+      }
+      R = R -> next;
+    }
+    return NULL;
 }
 void printInfoRelasi(List_Relasi L){
-
+    relateAddress R = L.first;
+    while (R!=NULL){
+        cout<<R -> tahanan -> info.namaTahanan<<" ditahan di ";
+        cout<<R -> lapas -> info.namaLapas;
+        R = R -> next;
+    }
 }

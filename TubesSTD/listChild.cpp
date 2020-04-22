@@ -121,3 +121,14 @@ void printInfoChild(List_Child L){
     }
     cout<<endl;
 }
+
+string generatorIDChild(){
+    int r;
+    stringstream ss;
+    srand((int)time(0));
+    r = (rand() % 850) + 1;
+    ss<<r;
+    string s;
+    ss>>s;
+    return s;
+}
