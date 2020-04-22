@@ -40,20 +40,23 @@ void insertLastParent(List_Parent &L, address_parent P){
 }
 
 void insertSortedParent(List_Parent &L, infotypeParent in){
-    if (findElmParent(L,in.namaLapas) == NULL){
-        if (in.namaLapas < L.first -> info.namaLapas){
-            insertFirstParent(L,CreateElmParent(in));
-        } else if (in.namaLapas > L.first -> prev -> info.namaLapas) {
-            insertLastParent(L,CreateElmParent(in));
+    if (L.first != NULL) {
+        if (findElmParent(L,in.namaLapas) == NULL){
+            if (in.namaLapas < L.first -> info.namaLapas){
+                insertFirstParent(L,CreateElmParent(in));
+
+            } else {
+                address_parent P = L.first;
+                do {
+                    P = P -> next;
+                } while(P!= L.first && P -> info.namaLapas > in.namaLapas);
+                insertAfterParent(L,P -> prev,CreateElmParent(in));
+            }
         } else {
-            address_parent P = L.first;
-            do {
-                P = P -> next;
-            }while(P!= L.first && P -> info)
-            insertAfterParent(L,P -> prev,CreateElmParent(in));
+            cout << "Lapas sudah terdaftar"<<endl;
         }
-    } else {
-        cout << "Lapas sudah terdaftar"<<endl;
+    }else {
+        insertFirstParent(L,CreateElmParent(in));
     }
 }
 
@@ -106,12 +109,14 @@ address_parent findElmParent(List_Parent L, string X){
     if (P!= NULL) {
         do {
             P = P -> next;
-        } while (P != L.first && P -> info.namaLapas != X);
-    } if (P -> info.namaLapas == X){
+        } while (P != L.first && P -> info.namaLapas != X && P -> info.IDLapas != X);
+    } if (P -> info.namaLapas == X || P -> info.IDLapas){
         return P;
     }
     return NULL;
 }
+
+
 
 void printInfoParent(List_Parent L){
     address_parent P = L.first;

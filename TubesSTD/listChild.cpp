@@ -35,9 +35,23 @@ void insertLastChild(List_Child &L, address_child P){
     }
 }
 
-void insertSortedChild(List_Child &L, infotypeChild X){
-    address_child P = L.first;
-//    if ()
+void insertSortedChild(List_Child &L, infotypeChild in){
+    if (L.first != NULL) {
+        if (findElmChild(L,in.namaTahanan) == NULL){
+            if (in.namaTahanan < L.first -> info.namaTahanan){
+                insertFirstChild(L,CreateElmParent(in));
+
+            } else {
+                address_child P = L.first;
+                while () {
+
+            }
+        } else {
+            cout << "Lapas sudah terdaftar"<<endl;
+        }
+    }else {
+        insertFirstChild(L,CreateElmParent(in));
+    }
 }
 void deleteFirstChild(List_Child &L, address_child &P){
 }
