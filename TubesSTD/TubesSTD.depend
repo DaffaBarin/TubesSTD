@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1587550941 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.cpp
+1587559280 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.cpp
 	"listChild.h"
 
 1586185933 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.cpp
@@ -10,7 +10,7 @@
 1587549449 e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.h
 	<iostream>
 
-1587550765 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.cpp
+1587559034 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.cpp
 	"listParent.h"
 
 1587548756 e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.h
