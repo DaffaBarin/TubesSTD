@@ -110,7 +110,7 @@ address_parent findElmParent(List_Parent L, string X){
         do {
             P = P -> next;
         } while (P != L.first && P -> info.namaLapas != X && P -> info.IDLapas != X);
-    } if (P -> info.namaLapas == X || P -> info.IDLapas){
+    } if (P -> info.namaLapas == X || P -> info.IDLapas == X){
         return P;
     }
     return NULL;
@@ -123,8 +123,8 @@ void printInfoParent(List_Parent L){
     if (P != NULL){
         do {
             cout<<"Lapas: "<<P -> info.namaLapas<<endl;
-            cout<<"ID: "<<P -> info.IDLapas<<endl;
             cout<<"Luas lapas: "<< P -> info.luasLapas<<endl;
+            cout<<"ID: "<<P -> info.IDLapas<<endl;
             cout<<endl;
             P = P -> next;
         }while(P != L.first);
