@@ -4,9 +4,9 @@ void createListParent(List_Parent &L) {
     L.first = NULL;
 }
 
-address_parent CreateElmParent(infotypeParent X){
+address_parent CreateElmParent(infotypeParent in){
     address_parent P = new parent;
-    P -> info = X;
+    P -> info = in;
     P -> next = NULL;
     P -> prev = NULL;
     return P;
@@ -37,6 +37,24 @@ void insertLastParent(List_Parent &L, address_parent P){
     P -> prev = L.first -> prev;
     L.first -> prev -> next = P;
     L.first -> prev = P;
+}
+
+void insertSortedParent(List_Parent &L, infotypeParent in){
+    if (findElmParent(L,in.namaLapas) == NULL){
+        if (in.namaLapas < L.first -> info.namaLapas){
+            insertFirstParent(L,CreateElmParent(in));
+        } else if (in.namaLapas > L.first -> prev -> info.namaLapas) {
+            insertLastParent(L,CreateElmParent(in));
+        } else {
+            address_parent P = L.first;
+            do {
+                P = P -> next;
+            }while(P!= L.first && P -> info)
+            insertAfterParent(L,P -> prev,CreateElmParent(in));
+        }
+    } else {
+        cout << "Lapas sudah terdaftar"<<endl;
+    }
 }
 
 void deleteFirstParent(List_Parent &L, address_parent &P){
@@ -71,7 +89,7 @@ void deleteLastParent(List_Parent &L, address_parent &P) {
     P -> prev = NULL;
 }
 void deleteSpesificParent(List_Parent &L, string X){
-    address_parent P = findElmParent(L,X)
+    address_parent P = findElmParent(L,X);
     if (P != NULL && P -> next != NULL && P -> prev != NULL){
         if (P = L.first){
             deleteFirstParent(L,P);
@@ -84,13 +102,27 @@ void deleteSpesificParent(List_Parent &L, string X){
 }
 
 address_parent findElmParent(List_Parent L, string X){
+    address_parent P = L.first;
     if (P!= NULL) {
-        address_parent P = L.first
         do {
             P = P -> next;
-        } while (P != L.first && P -> info.namaPenjara != X);
-    } if (P -> info.namaPenjara == X){
+        } while (P != L.first && P -> info.namaLapas != X);
+    } if (P -> info.namaLapas == X){
         return P;
     }
     return NULL;
+}
+
+void printInfoParent(List_Parent L){
+    address_parent P = L.first;
+    if (P != NULL){
+        do {
+            cout<<"Lapas: "<<P -> info.namaLapas<<endl;
+            cout<<"ID: "<<P -> info.IDLapas<<endl;
+            cout<<"Luas lapas: "<< P -> info.luasLapas<<endl;
+            cout<<endl;
+            P = P -> next;
+        }while(P != L.first);
+    }
+    cout<<endl;
 }

@@ -8,27 +8,28 @@ struct infotypeChild {
     int usiaTahanan;
 };
 
-typedef struct child *address_Child;
+typedef struct child *address_child;
 
 struct child {
     infotypeChild info;
-    address_Child next;
+    address_child next;
 };
 
-struct List2 {
-    address_Child first;
-    address_Child last;
+struct List_Child {
+    address_child first;
+    address_child last;
 };
 
-void createListChild(List2 &L);
-address_Child CreateElmChild(infotypeChild st);
-void insertFirstChild(List2 &L, address_Child P);
-void insertAfterChild(List2 &L, address_Child Prec, address_Child P);
-void insertLastChild(List2 &L, address_Child P);
-//void insertSortedChild(List2 &L, infotypeChild X);
-void deleteFirstChild(List2 &L, address_Child &P);
-void deleteAfterChild(List2 &L, address_Child Prec, address_Child &P);
-void deleteLastChild(List2 &L, address_Child &P);
-void deleteSpesificChild(List2 &L, string X);
-address_Child findElmChild(List2 &L, string X);
-void printInfoChild(List2 L);
+void createListChild(List_Child &L);
+address_child CreateElmChild(infotypeChild X);
+void insertFirstChild(List_Child &L, address_child P);
+void insertAfterChild(List_Child &L, address_child Prec, address_child P);
+void insertLastChild(List_Child &L, address_child P);
+//agar semua fungsi bisa terpakai
+void insertSortedChild(List_Child &L, infotypeChild X);
+void deleteFirstChild(List_Child &L, address_child &P);
+void deleteAfterChild(List_Child &L, address_child Prec, address_child &P);
+void deleteLastChild(List_Child &L, address_child &P);
+void deleteSpesificChild(List_Child &L, string X);
+address_child findElmChild(List_Child &L, string X);
+void printInfoChild(List_Child L);

@@ -4,9 +4,9 @@
 using namespace std;
 
 struct infotypeParent {
-    string namaPenjara;
-    string IDPenjara;
-    int luasPenjara;
+    string namaLapas;
+    string IDLapas;
+    int luasLapas;
 };
 
 typedef struct parent *address_parent;
@@ -22,12 +22,12 @@ struct List_Parent {
 };
 
 void createListParent(List_Parent &L);
-address_parent CreateElmParent(infotypeParent X);
+address_parent CreateElmParent(infotypeParent in);
 void insertFirstParent(List_Parent &L, address_parent P);
 void insertAfterParent(List_Parent &L, address_parent Prec, address_parent P);
 void insertLastParent(List_Parent &L, address_parent P);
 //agar semua insert bisa terpakai
-void insertSortedParent(List_Parent &L, infotypeParent X);
+void insertSortedParent(List_Parent &L, infotypeParent in);
 void deleteFirstParent(List_Parent &L, address_parent &P);
 void deleteAfterParent(List_Parent &L, address_parent Prec, address_parent &P);
 void deleteLastParent(List_Parent &L, address_parent &P);
