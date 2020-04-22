@@ -70,3 +70,27 @@ void deleteLastParent(List_Parent &L, address_parent &P) {
     P -> next = NULL;
     P -> prev = NULL;
 }
+void deleteSpesificParent(List_Parent &L, string X){
+    address_parent P = findElmParent(L,X)
+    if (P != NULL && P -> next != NULL && P -> prev != NULL){
+        if (P = L.first){
+            deleteFirstParent(L,P);
+        } else {
+            deleteAfterParent(L,P -> prev,P);
+        }
+    }else {
+        cout << "Lapas tidak ditemukan"<<endl;
+    }
+}
+
+address_parent findElmParent(List_Parent L, string X){
+    if (P!= NULL) {
+        address_parent P = L.first
+        do {
+            P = P -> next;
+        } while (P != L.first && P -> info.namaPenjara != X);
+    } if (P -> info.namaPenjara == X){
+        return P;
+    }
+    return NULL;
+}
