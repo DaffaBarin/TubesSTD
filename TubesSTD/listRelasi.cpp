@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void createList_Relasi(List_Relasi &L){
+void createListRelasi(List_Relasi &L){
     L.first = NULL;
     L.last = NULL;
 }

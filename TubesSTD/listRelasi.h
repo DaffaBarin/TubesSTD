@@ -6,14 +6,7 @@
 #include "listChild.h"
 
 using namespace std;
-/*
-struct infotypeRelasi {
-    int noTahanan;
-    int usia;
-    int durasi;
-    float rerata;
-};
-*/
+
 typedef struct Relasi *relateAddress;
 
 struct Relasi {
@@ -21,7 +14,6 @@ struct Relasi {
     address_child tahanan;
     relateAddress next;
     relateAddress prev;
-    //infotypeRelasi info;
 };
 
 struct List_Relasi {
@@ -29,7 +21,7 @@ struct List_Relasi {
     relateAddress last;
 };
 
-void createList_Relasi(List_Relasi &L);
+void createListRelasi(List_Relasi &L);
 relateAddress CreateElmRelasi(address_parent P, address_child Q);
 void insertRelasi(List_Relasi &L, relateAddress R);
 void deleteFirstRelasi(List_Relasi &L, relateAddress &R);

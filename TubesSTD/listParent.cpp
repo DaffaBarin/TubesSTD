@@ -4,6 +4,24 @@ void createListParent(List_Parent &L) {
     L.first = NULL;
 }
 
+void inputDataLapas(infotypeParent &in){
+    List_Parent L;
+    cout<<"Nama Lapas: "<<endl;
+    getline(cin,in.namaLapas);
+    while (findElmParent(L,in.namaLapas) != NULL ) {
+        cout<<"Lapas sudah ada. Input kembali."<<endl;
+        cout<<"Nama Lapas: "<<endl;
+        getline(cin,in.namaLapas);
+    }
+    cout<<"Ukuran Lapas: "<<endl;
+    cin >> in.luasLapas;
+    in.IDLapas = generatorIDParent();
+    while (findElmParent(L,in.IDLapas) != NULL){
+        in.IDLapas = generatorIDParent();
+    }
+    in.countLapas = 0;
+}
+
 address_parent CreateElmParent(infotypeParent in){
     address_parent P = new parent;
     P -> info = in;
@@ -102,6 +120,9 @@ void deleteSpesificParent(List_Parent &L, string X){
     }else {
         cout << "Lapas tidak ditemukan"<<endl;
     }
+}
+void deallocateParent(address_parent &P){
+    delete P;
 }
 
 address_parent findElmParent(List_Parent L, string X){

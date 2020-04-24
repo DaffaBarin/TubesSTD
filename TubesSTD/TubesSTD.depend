@@ -1,29 +1,30 @@
 # depslib dependency file v1.0
-1587583665 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.cpp
+1587711904 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.cpp
+	<iostream>
 	"listChild.h"
 
-1587583837 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.cpp
+1587714914 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.cpp
 	"listRelasi.h"
 
 1587583586 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\main.cpp
 	<iostream>
 
-1587583929 e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.h
+1587711822 e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.h
 	<iostream>
 	<cstdlib>
 	<ctime>
 	<sstream>
 
-1587583485 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.cpp
+1587714851 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.cpp
 	"listParent.h"
 
-1587583927 e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.h
+1587711897 e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.h
 	<iostream>
 	<sstream>
 	<cstdlib>
 	<ctime>
 
-1587563000 e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.h
+1587714916 e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.h
 	<iostream>
 	"listParent.h"
 	"listChild.h"

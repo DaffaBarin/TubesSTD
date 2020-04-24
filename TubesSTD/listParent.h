@@ -39,5 +39,9 @@ void deleteLastParent(List_Parent &L, address_parent &P);
 void deleteSpesificParent(List_Parent &L, string X);
 address_parent findElmParent(List_Parent L, string X);
 void printInfoParent(List_Parent L);
+
+void inputDataLapas(infotypeParent &in);
+
 //string 3 digit
 string generatorIDParent();
+void deallocateParent(address_parent &P);
