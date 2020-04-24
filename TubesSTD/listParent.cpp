@@ -1,16 +1,18 @@
+#include <iostream>
 #include "listParent.h"
 
 void createListParent(List_Parent &L) {
     L.first = NULL;
 }
 
-void inputDataLapas(infotypeParent &in){
-    List_Parent L;
+void inputDataLapas(List_Parent L, infotypeParent &in){
     cout<<"Nama Lapas: "<<endl;
+    cin.get();
     getline(cin,in.namaLapas);
-    while (findElmParent(L,in.namaLapas) != NULL ) {
+    while (findElmParent(L , in.namaLapas) != NULL ) {
         cout<<"Lapas sudah ada. Input kembali."<<endl;
         cout<<"Nama Lapas: "<<endl;
+        cin.get();
         getline(cin,in.namaLapas);
     }
     cout<<"Ukuran Lapas: "<<endl;
@@ -62,7 +64,6 @@ void insertSortedParent(List_Parent &L, infotypeParent in){
         if (findElmParent(L,in.namaLapas) == NULL){
             if (in.namaLapas < L.first -> info.namaLapas){
                 insertFirstParent(L,CreateElmParent(in));
-
             } else {
                 address_parent P = L.first;
                 do {
@@ -130,9 +131,10 @@ address_parent findElmParent(List_Parent L, string X){
     if (P!= NULL) {
         do {
             P = P -> next;
+             if (P -> info.namaLapas == X || P -> info.IDLapas == X){
+                return P;
+             }
         } while (P != L.first && P -> info.namaLapas != X && P -> info.IDLapas != X);
-    } if (P -> info.namaLapas == X || P -> info.IDLapas == X){
-        return P;
     }
     return NULL;
 }

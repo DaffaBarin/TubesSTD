@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include <sstream>
 #include <cstdlib>
 #include <ctime>
@@ -40,7 +41,7 @@ void deleteSpesificParent(List_Parent &L, string X);
 address_parent findElmParent(List_Parent L, string X);
 void printInfoParent(List_Parent L);
 
-void inputDataLapas(infotypeParent &in);
+void inputDataLapas(List_Parent L,infotypeParent &in);
 
 //string 3 digit
 string generatorIDParent();

@@ -4,13 +4,14 @@ void createListChild(List_Child &L){
     L.first = NULL;
 }
 
-void inputDataTahanan(infotypeChild &in){
-    List_Child L;
+void inputDataTahanan(List_Child L,infotypeChild &in){
     cout<<"Nama tahanan: "<<endl;
+    cin.get();
     getline(cin,in.namaTahanan);
     while (findElmChild(L,in.namaTahanan) != NULL ) {
         cout<<"Nama sudah ada. Input kembali."<<endl;
         cout<<"Nama tahanan: "<<endl;
+        cin.get();
         getline(cin,in.namaTahanan);
     }
     cout<<"Usia tahanan: "<<endl;

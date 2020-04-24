@@ -32,4 +32,9 @@ relateAddress findElmRelasiParent(List_Relasi &L, address_parent P);
 relateAddress findElmRelasiChild(List_Relasi &L,address_child Q);
 void printInfoRelasi(List_Relasi L);
 
+void countRelasiByParent(List_Relasi L);
+void countRelasiByChild(List_Relasi L);
+
+void printRelasiByParent(List_Relasi L, string out);
+void printRelasiByChild(List_Relasi L, string out);
 #endif // List_RelasiELASI_H_INCLUDED

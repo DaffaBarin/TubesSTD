@@ -38,7 +38,7 @@ void deleteSpesificChild(List_Child &L, string X);
 address_child findElmChild(List_Child &L, string X);
 void printInfoChild(List_Child L);
 
-void inputDataTahanan(infotypeChild &in);
+void inputDataTahanan(List_Child L,infotypeChild &in);
 
 //string 3 digit
 string generatorIDChild();

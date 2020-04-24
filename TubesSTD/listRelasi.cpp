@@ -71,26 +71,86 @@ void deleteSpesificRelasi(List_Relasi &L, string out){
     }
     cout<<endl;
 }
-relateAddress findElmRelasiParent(List_Relasi &L, address_parent P){
+relateAddress findElmRelasiParent(List_Relasi &L, string out){
     relateAddress R = L.first;
     while (R != NULL){
-      if (R -> lapas != P){
+      if (R -> lapas -> info.namaLapas == out){
         return R;
       }
       R = R -> next;
     }
     return NULL;
 }
-relateAddress findElmRelasiChild(List_Relasi &L, address_child Q){
+relateAddress findElmRelasiChild(List_Relasi &L, string out){
     relateAddress R = L.first;
     while (R != NULL){
-      if (R -> tahanan != Q){
+      if (R -> tahanan -> info.namaTahanan == out){
         return R;
       }
       R = R -> next;
     }
     return NULL;
 }
+
+void countRelasiByChild(List_Relasi L){
+    relateAddress R = L.first;
+    relateAddress P;
+    int max = 0;
+    if (R != NULL) {
+        while (R != NULL){
+            if (max < R -> tahanan -> info.countTahanan){
+                max = R -> tahanan -> info.countTahanan;
+                P = R;
+            }
+            R = R -> next;
+        }
+        cout<<"Tahanan dengan riwayat ditahan terbanyak adalah ";
+        cout<<P -> tahanan -> info.namaTahanan<<endl;
+        printRelasiByChild(L,P -> tahanan -> info.namaTahanan);
+    }
+}
+
+void printRelasiByChild(List_Relasi L, string out){
+    relateAddress R = L.first;
+    while (R != NULL){
+        if (R -> tahanan -> info.namaTahanan == out){
+            cout<<R -> lapas -> info.namaLapas<<" ";
+        }
+        R = R -> next;
+    }
+    cout<<endl;
+}
+
+void countRelasiByParent(List_Relasi L){
+    relateAddress R = L.first;
+    relateAddress P;
+    int max = 0;
+    if (R != NULL) {
+        while (R != NULL){
+            if (max < R -> lapas -> info.countLapas){
+                max = R -> lapas -> info.countLapas;
+                P = R;
+            }
+            R = R -> next;
+        }
+        cout<<"Lapas dengan tahanan terbanyak adalah ";
+        cout<<P -> lapas -> info.namaLapas<<endl;
+        printRelasiByChild(L,P -> lapas -> info.namaLapas);
+    }
+
+}
+
+void printRelasiByParent(List_Relasi L, string out){
+    relateAddress R = L.first;
+    while (R != NULL){
+        if (R -> lapas -> info.namaLapas == out){
+            cout<<R -> tahanan -> info.namaTahanan<<" ";
+        }
+        R = R -> next;
+    }
+    cout<<endl;
+}
+
 void printInfoRelasi(List_Relasi L){
     relateAddress R = L.first;
     while (R!=NULL){
