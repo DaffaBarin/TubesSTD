@@ -89,6 +89,7 @@ int main()
                 countRelasiByParent(List_Relasi);
                 break;
             case 9 :
+                cout<<"Nama lapas:"
                 break;
             case 10 :
                 break;
