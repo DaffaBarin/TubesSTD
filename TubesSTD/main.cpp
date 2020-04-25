@@ -44,6 +44,9 @@ int main()
         cout<<"11.Melepas tahanan dari lapas"<<endl;
         cout<<"Pilihan menu: ";
         cin>>pilih;
+        cout<<endl<<endl;
+
+    system ("cls");
         switch (pilih){
             case 1 :
                 inputDataLapas(List_Parent,DataLapas);
@@ -128,6 +131,11 @@ int main()
                 getline(cin,DataTahanan.namaTahanan);
                 deleteSpesificRelasi(List_Relasi,DataLapas.namaLapas,DataTahanan.namaTahanan);
                 break;
+            default:
+                cout<<"************************************"<<endl;
+                cout<<"Maaf nilai yang anda masukkan salah"<<endl;
+                cout<<"       Silahkan ulangi lagi"<<endl;
+                cout<<"*************************************"<<endl<<endl;
         }
 
     }while(pilih>0);
