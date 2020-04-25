@@ -17,8 +17,11 @@ int main()
     createListChild(List_Child);
     createListRelasi(List_Relasi);
 
-    do{
-        cout<<"Menu Administrasi Lapas Tahanan"<<endl;
+    do{ cout<<"************************************"<<endl;
+        cout<<"         SELAMAT DATANG DI          "<<endl;
+        cout<<"   Menu Administrasi Lapas Tahanan  "<<endl;
+        cout<<"             V.1.0                  "<<endl;
+        cout<<"************************************"<<endl<<endl;
 
         //insert parent
         cout<<"1.Mendaftarkan Lapas"<<endl;
@@ -134,7 +137,7 @@ int main()
             default:
                 cout<<"************************************"<<endl;
                 cout<<"Maaf nilai yang anda masukkan salah"<<endl;
-                cout<<"       Silahkan ulangi lagi"<<endl;
+                cout<<"       Silahkan ulangi lagi :) "<<endl;
                 cout<<"*************************************"<<endl<<endl;
         }
 

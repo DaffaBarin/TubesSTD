@@ -32,3 +32,36 @@
 	"listParent.h"
 	"listChild.h"
 
+1587807509 source:c:\users\rulz\documents\github\tubes\tubesstd\listchild.cpp
+	<iostream>
+	"listChild.h"
+
+1587807509 c:\users\rulz\documents\github\tubes\tubesstd\listchild.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<sstream>
+
+1587808290 source:c:\users\rulz\documents\github\tubes\tubesstd\listparent.cpp
+	<iostream>
+	"listParent.h"
+
+1587807509 c:\users\rulz\documents\github\tubes\tubesstd\listparent.h
+	<iostream>
+	<stdlib.h>
+	<sstream>
+	<cstdlib>
+	<ctime>
+
+1587807509 source:c:\users\rulz\documents\github\tubes\tubesstd\listrelasi.cpp
+	"listRelasi.h"
+
+1587807509 c:\users\rulz\documents\github\tubes\tubesstd\listrelasi.h
+	<iostream>
+	"listParent.h"
+	"listChild.h"
+
+1587808536 source:c:\users\rulz\documents\github\tubes\tubesstd\main.cpp
+	<iostream>
+	"listRelasi.h"
+

@@ -146,10 +146,11 @@ void printInfoParent(List_Parent L){
     address_parent P = L.first;
     if (P != NULL){
         do {
+            cout<<"************************************"<<endl;
             cout<<"Lapas: "<<P -> info.namaLapas<<endl;
             cout<<"Luas lapas: "<< P -> info.luasLapas<<endl;
             cout<<"ID: "<<P -> info.IDLapas<<endl;
-            cout<<endl;
+            cout<<"************************************"<<endl<<endl;
             P = P -> next;
         }while(P != L.first);
     }
