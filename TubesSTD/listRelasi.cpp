@@ -117,6 +117,30 @@ relateAddress findElmRelasiChild(List_Relasi &L, string out){
     return NULL;
 }
 
+void deleteAllRelasiChild(List_Relasi &L, address_child Q){
+    relateAddress R;
+    cout<<"mek";
+    while (findElmRelasiChild(L,Q->info.namaTahanan) != NULL){
+        if (L.first -> tahanan == Q){
+            cout<<"Heol";
+            deleteFirstRelasi(L,R);
+        }
+         else if (L.last -> tahanan == Q){
+            cout<<"heol2";
+            deleteLastRelasi(L,R);
+        }else {
+            R = L.first;
+            while (findElmRelasiChild(L,Q->info.namaTahanan) != NULL){
+                cout<<"helo3";
+                if (R -> tahanan == Q){
+                    deleteAfterRelasi(L,R -> prev,R);
+                }
+                R = R -> next;
+            }
+        }
+    }
+}
+
 void countRelasiByChild(List_Relasi L){
     relateAddress R = L.first;
     relateAddress P;

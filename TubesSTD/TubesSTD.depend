@@ -3,10 +3,10 @@
 	<iostream>
 	"listChild.h"
 
-1587805095 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.cpp
+1587806639 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.cpp
 	"listRelasi.h"
 
-1587804291 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\main.cpp
+1587806624 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\main.cpp
 	<iostream>
 	"listRelasi.h"
 
@@ -27,7 +27,7 @@
 	<cstdlib>
 	<ctime>
 
-1587804275 e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.h
+1587805744 e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.h
 	<iostream>
 	"listParent.h"
 	"listChild.h"

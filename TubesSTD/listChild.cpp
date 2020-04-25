@@ -115,7 +115,7 @@ void deleteSpesificChild(List_Child &L, string X){
             }
             deleteAfterChild(L,Q,P);
         }
-        cout<<"Penghapusan tahanan "<<X<<"telah berhasil"<<endl;
+        cout<<"Penghapusan tahanan "<<X<<" telah berhasil"<<endl;
     } else {
         cout<<"Tahanan sudah tidak ada."<<endl;
     }

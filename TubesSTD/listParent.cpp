@@ -118,6 +118,7 @@ void deleteSpesificParent(List_Parent &L, string X){
         } else {
             deleteAfterParent(L,P -> prev,P);
         }
+        cout<<"Penghapusan lapas "<<X<<" telah berhasil"<<endl;
     }else {
         cout << "Lapas tidak ditemukan"<<endl;
     }

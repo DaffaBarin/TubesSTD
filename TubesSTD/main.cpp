@@ -106,6 +106,7 @@ int main()
                 break;
             case 10 :
                 cout<<"Nama Tahanan:"<<endl;
+                cin.get();
                 getline(cin,DataTahanan.namaTahanan);
                 Q = findElmChild(List_Child,DataTahanan.namaTahanan);
                 R = findElmRelasiChild(List_Relasi,Q->info.namaTahanan);
@@ -113,7 +114,7 @@ int main()
                     if (R != NULL){
                         deleteAllRelasiChild(List_Relasi,Q);
                     }
-                    deleteSpesificChild(List_Parent,Q -> info.namaTahanan);
+                    deleteSpesificChild(List_Child,Q -> info.namaTahanan);
                     deallocateChild(Q);
                 }else {
                     cout<<"Tahanan belum terdaftar."<<endl;
