@@ -5,21 +5,22 @@ void createListChild(List_Child &L){
 }
 
 void inputDataTahanan(List_Child L,infotypeChild &in){
-    cout<<"Nama tahanan: "<<endl;
+    cout<<"Nama tahanan: ";
     cin.get();
     getline(cin,in.namaTahanan);
     while (findElmChild(L,in.namaTahanan) != NULL ) {
         cout<<"Nama sudah ada. Input kembali."<<endl;
-        cout<<"Nama tahanan: "<<endl;
+        cout<<"Nama tahanan: ";
         cin.get();
         getline(cin,in.namaTahanan);
     }
-    cout<<"Usia tahanan: "<<endl;
+    cout<<"Usia tahanan: ";
     cin >> in.usiaTahanan;
     in.IDTahanan = generatorIDChild();
     while (findElmChild(L,in.IDTahanan) != NULL){
         in.IDTahanan = generatorIDChild();
     }
+    cout<<"ID tahanan: "<<in.IDTahanan;
     in.countTahanan = 0;
 }
 
@@ -57,10 +58,10 @@ void insertLastChild(List_Child &L, address_child P){
 void insertSortedChild(List_Child &L, infotypeChild in){
     if (L.first != NULL) {
         if (findElmChild(L,in.namaTahanan) == NULL){
-            if (in.namaTahanan < L.first -> info.namaTahanan){
+            if (in.namaTahanan > L.first -> info.namaTahanan){
                 insertFirstChild(L,CreateElmChild(in));
 
-            } else if (in.namaTahanan > L.last -> info.namaTahanan){
+            } else if (in.namaTahanan < L.last -> info.namaTahanan){
                 insertLastChild(L,CreateElmChild(in));
             } else {
                 address_child P = L.first;
@@ -147,11 +148,11 @@ void printInfoChild(List_Child L){
 
 string generatorIDChild(){
     int r;
-    stringstream ss;
+    stringstream sss;
     srand((int)time(0));
     r = (rand() % 850) + 1;
-    ss<<r;
+    sss<<r;
     string s;
-    ss>>s;
+    sss>>s;
     return s;
 }

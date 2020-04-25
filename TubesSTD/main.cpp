@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    string any;
     int pilih;
     List_Parent List_Parent;
     List_Child List_Child;
@@ -47,9 +48,13 @@ int main()
         cout<<"11.Melepas tahanan dari lapas"<<endl;
         cout<<"Pilihan menu: ";
         cin>>pilih;
+<<<<<<< HEAD
         cout<<endl<<endl;
 
     system ("cls");
+=======
+        system("CLS");
+>>>>>>> upstream/master
         switch (pilih){
             case 1 :
                 inputDataLapas(List_Parent,DataLapas);
@@ -99,7 +104,7 @@ int main()
                 cin.get();
                 getline(cin,DataLapas.namaLapas);
                 P = findElmParent(List_Parent,DataLapas.namaLapas);
-                R = findElmRelasiParent(List_Relasi,P->info.namaLapas);
+                R = findElmRelasiParent(List_Relasi,DataLapas.namaLapas);
                 if (P != NULL){
                     if (R != NULL){
                         deleteAllRelasiParent(List_Relasi,P);
@@ -115,7 +120,7 @@ int main()
                 cin.get();
                 getline(cin,DataTahanan.namaTahanan);
                 Q = findElmChild(List_Child,DataTahanan.namaTahanan);
-                R = findElmRelasiChild(List_Relasi,Q->info.namaTahanan);
+                R = findElmRelasiChild(List_Relasi,DataLapas.namaLapas);
                 if (Q != NULL){
                     if (R != NULL){
                         deleteAllRelasiChild(List_Relasi,Q);
@@ -127,10 +132,10 @@ int main()
                 }
                 break;
             case 11 :
-                cout<<"Nama Lapas:"<<endl;
+                cout<<"Nama Lapas:";
                 cin.get();
                 getline(cin,DataLapas.namaLapas);
-                cout<<"Nama Tahanan:"<<endl;
+                cout<<"Nama Tahanan:";
                 getline(cin,DataTahanan.namaTahanan);
                 deleteSpesificRelasi(List_Relasi,DataLapas.namaLapas,DataTahanan.namaTahanan);
                 break;
@@ -140,7 +145,11 @@ int main()
                 cout<<"       Silahkan ulangi lagi :) "<<endl;
                 cout<<"*************************************"<<endl<<endl;
         }
-
-    }while(pilih>0);
+        cout<<endl;
+        cout<<"Klik apapun untuk melanjutkan."<<endl;
+        cin.get();
+        getline(cin,any);
+        system("CLS");
+    }while(pilih <= 12 && pilih>0);
     return 0;
 }
