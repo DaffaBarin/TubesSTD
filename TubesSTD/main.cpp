@@ -66,11 +66,11 @@ int main()
                 printInfoChild(List_Child);
                 break;
             case 5 :
-                cout<<"Nama Lapas:"<<endl;
+                cout<<"Nama Lapas:";
                 cin.get();
                 getline(cin,DataLapas.namaLapas);
                 P = findElmParent(List_Parent,DataLapas.namaLapas);
-                cout<<"Nama Tahanan:"<<endl;
+                cout<<"Nama Tahanan:";
                 getline(cin,DataTahanan.namaTahanan);
                 Q = findElmChild(List_Child,DataTahanan.namaTahanan);
                 if (P != NULL && Q != NULL){
