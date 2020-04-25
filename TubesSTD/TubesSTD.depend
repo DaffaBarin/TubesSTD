@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1587737799 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.cpp
+1587807810 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.cpp
 	<iostream>
 	"listChild.h"
 
 1587806639 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.cpp
 	"listRelasi.h"
 
-1587806624 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\main.cpp
+1587807870 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\main.cpp
 	<iostream>
 	"listRelasi.h"
 
@@ -16,7 +16,7 @@
 	<ctime>
 	<sstream>
 
-1587741602 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.cpp
+1587806857 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.cpp
 	<iostream>
 	"listParent.h"
 

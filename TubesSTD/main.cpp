@@ -93,7 +93,7 @@ int main()
                 cin.get();
                 getline(cin,DataLapas.namaLapas);
                 P = findElmParent(List_Parent,DataLapas.namaLapas);
-                R = findElmRelasiParent(List_Relasi,P->info.namaLapas);
+                R = findElmRelasiParent(List_Relasi,DataLapas.namaLapas);
                 if (P != NULL){
                     if (R != NULL){
                         deleteAllRelasiParent(List_Relasi,P);
@@ -109,7 +109,7 @@ int main()
                 cin.get();
                 getline(cin,DataTahanan.namaTahanan);
                 Q = findElmChild(List_Child,DataTahanan.namaTahanan);
-                R = findElmRelasiChild(List_Relasi,Q->info.namaTahanan);
+                R = findElmRelasiChild(List_Relasi,DataLapas.namaLapas);
                 if (Q != NULL){
                     if (R != NULL){
                         deleteAllRelasiChild(List_Relasi,Q);
