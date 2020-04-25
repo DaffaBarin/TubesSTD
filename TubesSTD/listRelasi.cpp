@@ -204,7 +204,7 @@ void printInfoRelasi(List_Relasi L){
     relateAddress R = L.first;
     while (R!=NULL){
         cout<<R -> tahanan -> info.namaTahanan<<" ditahan di ";
-        cout<<R -> lapas -> info.namaLapas;
+        cout<<R -> lapas -> info.namaLapas<<" , kasian sekali";
         R = R -> next;
     }
     cout<<endl;

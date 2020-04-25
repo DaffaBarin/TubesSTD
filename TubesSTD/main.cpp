@@ -48,13 +48,8 @@ int main()
         cout<<"11.Melepas tahanan dari lapas"<<endl;
         cout<<"Pilihan menu: ";
         cin>>pilih;
-<<<<<<< HEAD
         cout<<endl<<endl;
-
-    system ("cls");
-=======
-        system("CLS");
->>>>>>> upstream/master
+    system("CLS");
         switch (pilih){
             case 1 :
                 inputDataLapas(List_Parent,DataLapas);
