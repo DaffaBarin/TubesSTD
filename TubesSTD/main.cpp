@@ -31,7 +31,7 @@ int main()
         //connect relasi
         cout<<"5.Memilih Lapas untuk Tahanan"<<endl;
         //print relasi
-        cout<<"6.Melihat para tahanan dan lokasi lapasnya"<<endl;
+        cout<<"6.Melihat tahanan dan lokasi lapasnya"<<endl;
         //case fungsi 1
         cout<<"7.Melihat Tahanan yang paling sering ditahan"<<endl;
         //case fungsi 2
@@ -89,11 +89,43 @@ int main()
                 countRelasiByParent(List_Relasi);
                 break;
             case 9 :
-                cout<<"Nama lapas:"
+                cout<<"Nama lapas: ";
+                cin.get();
+                getline(cin,DataLapas.namaLapas);
+                P = findElmParent(List_Parent,DataLapas.namaLapas);
+                R = findElmRelasiParent(List_Relasi,P->info.namaLapas);
+                if (P != NULL){
+                    if (R != NULL){
+                        deleteAllRelasiParent(List_Relasi,P);
+                    }
+                    deleteSpesificParent(List_Parent,P -> info.namaLapas);
+                    deallocateParent(P);
+                }else {
+                    cout<<"Lapas belum terdaftar."<<endl;
+                }
                 break;
             case 10 :
+                cout<<"Nama Tahanan:"<<endl;
+                getline(cin,DataTahanan.namaTahanan);
+                Q = findElmChild(List_Child,DataTahanan.namaTahanan);
+                R = findElmRelasiChild(List_Relasi,Q->info.namaTahanan);
+                if (Q != NULL){
+                    if (R != NULL){
+                        deleteAllRelasiChild(List_Relasi,Q);
+                    }
+                    deleteSpesificChild(List_Parent,Q -> info.namaTahanan);
+                    deallocateChild(Q);
+                }else {
+                    cout<<"Tahanan belum terdaftar."<<endl;
+                }
                 break;
             case 11 :
+                cout<<"Nama Lapas:"<<endl;
+                cin.get();
+                getline(cin,DataLapas.namaLapas);
+                cout<<"Nama Tahanan:"<<endl;
+                getline(cin,DataTahanan.namaTahanan);
+                deleteSpesificRelasi(List_Relasi,DataLapas.namaLapas,DataTahanan.namaTahanan);
                 break;
         }
 

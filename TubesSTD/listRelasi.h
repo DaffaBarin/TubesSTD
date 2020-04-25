@@ -27,9 +27,9 @@ void insertRelasi(List_Relasi &L, relateAddress R);
 void deleteFirstRelasi(List_Relasi &L, relateAddress &R);
 void deleteAfterRelasi(List_Relasi &L, relateAddress Prec, relateAddress &R);
 void deleteLastRelasi(List_Relasi &L, relateAddress &R);
-void deleteSpesificRelasi(List_Relasi &L, string out);
-relateAddress findElmRelasiParent(List_Relasi &L, address_parent P);
-relateAddress findElmRelasiChild(List_Relasi &L,address_child Q);
+void deleteSpesificRelasi(List_Relasi &L, string namalapas, string namatahanan);
+relateAddress findElmRelasiParent(List_Relasi &L, string out);
+relateAddress findElmRelasiChild(List_Relasi &L, string out);
 void printInfoRelasi(List_Relasi L);
 
 void countRelasiByParent(List_Relasi L);
@@ -37,4 +37,7 @@ void countRelasiByChild(List_Relasi L);
 
 void printRelasiByParent(List_Relasi L, string out);
 void printRelasiByChild(List_Relasi L, string out);
+
+void deleteAllRelasiParent(List_Relasi &L, address_parent P);
+void deleteAllRelasiChild(List_Relasi &L,address_child Q);
 #endif // List_RelasiELASI_H_INCLUDED

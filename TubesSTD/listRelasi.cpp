@@ -22,6 +22,7 @@ void insertRelasi(List_Relasi &L, relateAddress R){
         L.last = R;
     } else {
         L.last -> next = R;
+        R -> prev = L.last;
         L.last = R;
     }
 }
@@ -31,6 +32,7 @@ void deleteFirstRelasi(List_Relasi &L, relateAddress &R){
         R = L.first;
         L.first = R -> next;
         R -> next = NULL;
+        L.first -> prev = NULL;
     }else {
         R = L.first;
         L.first = NULL;
@@ -42,28 +44,26 @@ void deleteAfterRelasi(List_Relasi &L, relateAddress Prec, relateAddress &R){
     Prec -> next = R -> next;
 }
 void deleteLastRelasi(List_Relasi &L, relateAddress &R){
-    relateAddress Q = L.first;
-    while (Q -> next -> next != NULL) {
-        Q = Q -> next;
-    }
-    R = Q -> next;
-    Q -> next = NULL;
+    R = L.last;
+    L.last = R -> prev;
+    R -> prev = NULL;
+    L.last -> next = NULL;
 }
-void deleteSpesificRelasi(List_Relasi &L, string out){
+void deleteSpesificRelasi(List_Relasi &L, string namalapas, string namatahanan){
     relateAddress R = L.first;
     if (R != NULL){
-        if (L.first -> lapas -> info.namaLapas == out){
+        if (L.first -> lapas -> info.namaLapas == namalapas && L.first -> tahanan -> info.namaTahanan == namatahanan){
             deleteFirstRelasi(L,R);
-        } else if (L.first -> tahanan -> info.namaTahanan == out){
+        } else if (L.last -> lapas -> info.namaLapas == namalapas && L.last -> tahanan -> info.namaTahanan == namatahanan ){
             deleteLastRelasi(L,R);
         } else {
-            while (R != NULL && R -> lapas -> info.namaLapas != out && R -> tahanan -> info.namaTahanan != out){
+            while (R != NULL && R -> lapas -> info.namaLapas != namalapas && R -> tahanan -> info.namaTahanan != namatahanan){
                 R = R -> next;
             }
-            if (R -> lapas -> info.namaLapas == out || R -> tahanan -> info.namaTahanan == out) {
+            if (R -> lapas -> info.namaLapas == namalapas && R -> tahanan -> info.namaTahanan == namatahanan) {
                 deleteAfterRelasi(L,R -> prev,R);
             }else {
-                cout<<out<<" tidak ada pada relasi."<<endl;
+                cout<<"Belum ada relasi."<<endl;
             }
         }
     }else {
@@ -81,6 +81,31 @@ relateAddress findElmRelasiParent(List_Relasi &L, string out){
     }
     return NULL;
 }
+
+void deleteAllRelasiParent(List_Relasi &L, address_parent P){
+    relateAddress R;
+    cout<<"mek";
+    while (findElmRelasiParent(L,P->info.namaLapas) != NULL){
+        if (L.first -> lapas == P){
+            cout<<"Heol";
+            deleteFirstRelasi(L,R);
+        }
+         else if (L.last -> lapas == P){
+            cout<<"heol2";
+            deleteLastRelasi(L,R);
+        }else {
+            R = L.first;
+            while (findElmRelasiParent(L,P->info.namaLapas) != NULL){
+                cout<<"helo3";
+                if (R -> lapas == P){
+                    deleteAfterRelasi(L,R -> prev,R);
+                }
+                R = R -> next;
+            }
+        }
+    }
+}
+
 relateAddress findElmRelasiChild(List_Relasi &L, string out){
     relateAddress R = L.first;
     while (R != NULL){
