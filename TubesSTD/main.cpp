@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    string any;
     int pilih;
     List_Parent List_Parent;
     List_Child List_Child;
@@ -44,6 +45,7 @@ int main()
         cout<<"11.Melepas tahanan dari lapas"<<endl;
         cout<<"Pilihan menu: ";
         cin>>pilih;
+        system("CLS");
         switch (pilih){
             case 1 :
                 inputDataLapas(List_Parent,DataLapas);
@@ -121,15 +123,19 @@ int main()
                 }
                 break;
             case 11 :
-                cout<<"Nama Lapas:"<<endl;
+                cout<<"Nama Lapas:";
                 cin.get();
                 getline(cin,DataLapas.namaLapas);
-                cout<<"Nama Tahanan:"<<endl;
+                cout<<"Nama Tahanan:";
                 getline(cin,DataTahanan.namaTahanan);
                 deleteSpesificRelasi(List_Relasi,DataLapas.namaLapas,DataTahanan.namaTahanan);
                 break;
         }
-
-    }while(pilih>0);
+        cout<<endl;
+        cout<<"Klik apapun untuk melanjutkan."<<endl;
+        cin.get();
+        getline(cin,any);
+        system("CLS");
+    }while(pilih <= 12 && pilih>0);
     return 0;
 }

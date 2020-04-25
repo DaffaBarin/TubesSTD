@@ -6,21 +6,22 @@ void createListParent(List_Parent &L) {
 }
 
 void inputDataLapas(List_Parent L, infotypeParent &in){
-    cout<<"Nama Lapas: "<<endl;
+    cout<<"Nama Lapas: ";
     cin.get();
     getline(cin,in.namaLapas);
     while (findElmParent(L , in.namaLapas) != NULL ) {
         cout<<"Lapas sudah ada. Input kembali."<<endl;
-        cout<<"Nama Lapas: "<<endl;
+        cout<<"Nama Lapas: ";
         cin.get();
         getline(cin,in.namaLapas);
     }
-    cout<<"Ukuran Lapas: "<<endl;
+    cout<<"Ukuran Lapas: ";
     cin >> in.luasLapas;
     in.IDLapas = generatorIDParent();
     while (findElmParent(L,in.IDLapas) != NULL){
         in.IDLapas = generatorIDParent();
     }
+    cout<<"ID Lapas: "<<in.IDLapas;
     in.countLapas = 0;
 }
 
@@ -158,11 +159,11 @@ void printInfoParent(List_Parent L){
 
 string generatorIDParent(){
     int r;
-    stringstream ss;
+    stringstream sss;
     srand((int)time(0));
     r = (rand() % 850) + 1;
-    ss<<r;
+    sss<<r;
     string s;
-    ss>>s;
+    sss>>s;
     return s;
 }
