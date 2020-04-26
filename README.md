@@ -27,7 +27,7 @@ Relation (done)
 7. Connect parent and child
 8. Disconnect parent and child
 
-Case functionality
+Case functionality (done)
 1. See the most related parent and print its relation
 2. See the most related child and print its relation
 
