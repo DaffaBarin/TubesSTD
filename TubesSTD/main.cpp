@@ -131,6 +131,7 @@ int main()
                 cin.get();
                 getline(cin,DataLapas.namaLapas);
                 cout<<"Nama Tahanan:";
+                cin.get();
                 getline(cin,DataTahanan.namaTahanan);
                 deleteSpesificRelasi(List_Relasi,DataLapas.namaLapas,DataTahanan.namaTahanan);
                 break;
@@ -160,9 +161,9 @@ int main()
                 getline(cin,DataTahanan.IDTahanan);
                 Q = findElmChild(List_Child,DataTahanan.IDTahanan);
                 if (Q != NULL){
-                    cout<<"Nama:"<<P -> info.namaTahanan<<endl;
-                    cout<<"Usia:"<<P -> info.usiaTahanan<<endl;
-                    cout<<"ID:"<<P -> info.IDTahanan<<endl;
+                    cout<<"Nama:"<<Q -> info.namaTahanan<<endl;
+                    cout<<"Usia:"<<Q -> info.usiaTahanan<<endl;
+                    cout<<"ID:"<<Q -> info.IDTahanan<<endl;
                     R = findElmRelasiChild(List_Relasi, Q -> info.namaTahanan);
                     if (R!=NULL){
                         printRelasiByChild(List_Relasi,Q -> info.namaTahanan);
@@ -177,6 +178,6 @@ int main()
         cin.get();
         getline(cin,any);
         system("CLS");
-    }while(pilih <= 12 && pilih>0);
+    }while(pilih <= 13 && pilih>0);
     return 0;
 }
