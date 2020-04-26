@@ -52,7 +52,7 @@ int main()
         cout<<"Pilihan menu: ";
         cin>>pilih;
         cout<<endl<<endl;
-    system("CLS");
+        system("CLS");
         switch (pilih){
             case 1 :
                 inputDataLapas(List_Parent,DataLapas);
@@ -174,14 +174,9 @@ int main()
                     cout<<DataTahanan.namaTahanan<<" belum terdaftar."<<endl;
                 }
                 break;
-            default:
-                cout<<"************************************"<<endl;
-                cout<<"Maaf nilai yang anda masukkan salah"<<endl;
-                cout<<"       Silahkan ulangi lagi :) "<<endl;
-                cout<<"*************************************"<<endl<<endl;
         }
         cout<<endl;
-        cout<<"Klik apapun untuk melanjutkan."<<endl;
+        cout<<"Program berhasil dilakukan. Klik apapun untuk melanjutkan."<<endl;
         cin.get();
         getline(cin,any);
         system("CLS");

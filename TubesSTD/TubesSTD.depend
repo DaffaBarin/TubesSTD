@@ -3,20 +3,20 @@
 	<iostream>
 	"listChild.h"
 
-1587806639 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.cpp
+1587900832 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listrelasi.cpp
 	"listRelasi.h"
 
-1587884775 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\main.cpp
+1587900926 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\main.cpp
 	<iostream>
 	"listRelasi.h"
 
-1587737573 e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.h
+1587900832 e:\kuliah dapdap\tubes std\tubes\tubesstd\listchild.h
 	<iostream>
 	<cstdlib>
 	<ctime>
 	<sstream>
 
-1587821685 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.cpp
+1587900832 source:e:\kuliah dapdap\tubes std\tubes\tubesstd\listparent.cpp
 	<iostream>
 	"listParent.h"
 
