@@ -18,9 +18,11 @@ int main()
     createListChild(List_Child);
     createListRelasi(List_Relasi);
 
-    do{
-        cout<<"Menu Administrasi Lapas Tahanan"<<endl;
-
+    do{ cout<<"************************************"<<endl;
+        cout<<"         SELAMAT DATANG DI          "<<endl;
+        cout<<"   Menu Administrasi Lapas Tahanan  "<<endl;
+        cout<<"             V.1.0                  "<<endl;
+        cout<<"************************************"<<endl<<endl;
         //insert parent
         cout<<"1.Mendaftarkan Lapas"<<endl;
         //insert child
@@ -49,7 +51,8 @@ int main()
         cout<<"13.Mencari nama Tahanan berdasarkan ID beserta Lapas yang ditempatinya"<<endl;
         cout<<"Pilihan menu: ";
         cin>>pilih;
-        system("CLS");
+        cout<<endl<<endl;
+    system("CLS");
         switch (pilih){
             case 1 :
                 inputDataLapas(List_Parent,DataLapas);
@@ -135,7 +138,6 @@ int main()
                 getline(cin,DataTahanan.namaTahanan);
                 deleteSpesificRelasi(List_Relasi,DataLapas.namaLapas,DataTahanan.namaTahanan);
                 break;
-
             case 12 :
                 cout<<"ID Lapas:";
                 cin.get();
@@ -172,6 +174,11 @@ int main()
                     cout<<DataTahanan.namaTahanan<<" belum terdaftar."<<endl;
                 }
                 break;
+            default:
+                cout<<"************************************"<<endl;
+                cout<<"Maaf nilai yang anda masukkan salah"<<endl;
+                cout<<"       Silahkan ulangi lagi :) "<<endl;
+                cout<<"*************************************"<<endl<<endl;
         }
         cout<<endl;
         cout<<"Klik apapun untuk melanjutkan."<<endl;
