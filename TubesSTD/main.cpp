@@ -43,6 +43,10 @@ int main()
         cout<<"10.Menghapus Tahanan dari daftar Tahanan"<<endl;
         //disconnect relasi
         cout<<"11.Melepas tahanan dari lapas"<<endl;
+        //search parent dan print relasinya ada
+        cout<<"12.Mencari nama Lapas berdasarkan ID beserta tahanan di dalamnya"<<endl;
+        //search child dan print relasinya jika ada
+        cout<<"13.Mencari nama Tahanan berdasarkan ID beserta Lapas yang ditempatinya"<<endl;
         cout<<"Pilihan menu: ";
         cin>>pilih;
         system("CLS");
@@ -129,6 +133,43 @@ int main()
                 cout<<"Nama Tahanan:";
                 getline(cin,DataTahanan.namaTahanan);
                 deleteSpesificRelasi(List_Relasi,DataLapas.namaLapas,DataTahanan.namaTahanan);
+                break;
+
+            case 12 :
+                cout<<"ID Lapas:";
+                cin.get();
+                getline(cin,DataLapas.IDLapas);
+                P = findElmParent(List_Parent,DataLapas.IDLapas);
+                if (P != NULL) {
+                    cout<<"Lapas: "<<P -> info.namaLapas<<endl;
+                    cout<<"Luas lapas: "<< P -> info.luasLapas<<endl;
+                    cout<<"ID: "<<P -> info.IDLapas<<endl;
+                    cout<<"Tahanan: ";
+                    R = findElmRelasiParent(List_Relasi,P -> info.namaLapas);
+                    if (R!=NULL){
+                        printRelasiByParent(List_Relasi,P -> info.namaLapas);
+                    }
+                } else {
+                    cout<<DataLapas.namaLapas<<" belum terdaftar."<<endl;
+                }
+                break;
+
+            case 13 :
+                cout<<"ID Tahanan:";
+                cin.get();
+                getline(cin,DataTahanan.IDTahanan);
+                Q = findElmChild(List_Child,DataTahanan.IDTahanan);
+                if (Q != NULL){
+                    cout<<"Nama:"<<P -> info.namaTahanan<<endl;
+                    cout<<"Usia:"<<P -> info.usiaTahanan<<endl;
+                    cout<<"ID:"<<P -> info.IDTahanan<<endl;
+                    R = findElmRelasiChild(List_Relasi, Q -> info.namaTahanan);
+                    if (R!=NULL){
+                        printRelasiByChild(List_Relasi,Q -> info.namaTahanan);
+                    }
+                } else {
+                    cout<<DataTahanan.namaTahanan<<" belum terdaftar."<<endl;
+                }
                 break;
         }
         cout<<endl;
