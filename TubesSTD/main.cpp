@@ -23,7 +23,6 @@ int main()
         cout<<"   Menu Administrasi Lapas Tahanan  "<<endl;
         cout<<"             V.1.0                  "<<endl;
         cout<<"************************************"<<endl<<endl;
-
         //insert parent
         cout<<"1.Mendaftarkan Lapas"<<endl;
         //insert child
@@ -139,11 +138,6 @@ int main()
                 getline(cin,DataTahanan.namaTahanan);
                 deleteSpesificRelasi(List_Relasi,DataLapas.namaLapas,DataTahanan.namaTahanan);
                 break;
-            default:
-                cout<<"************************************"<<endl;
-                cout<<"Maaf nilai yang anda masukkan salah"<<endl;
-                cout<<"       Silahkan ulangi lagi :) "<<endl;
-                cout<<"*************************************"<<endl<<endl;
             case 12 :
                 cout<<"ID Lapas:";
                 cin.get();
@@ -180,6 +174,11 @@ int main()
                     cout<<DataTahanan.namaTahanan<<" belum terdaftar."<<endl;
                 }
                 break;
+            default:
+                cout<<"************************************"<<endl;
+                cout<<"Maaf nilai yang anda masukkan salah"<<endl;
+                cout<<"       Silahkan ulangi lagi :) "<<endl;
+                cout<<"*************************************"<<endl<<endl;
         }
         cout<<endl;
         cout<<"Klik apapun untuk melanjutkan."<<endl;
