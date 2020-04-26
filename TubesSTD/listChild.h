@@ -24,6 +24,7 @@ struct List_Child {
     address_child last;
 };
 
+
 void createListChild(List_Child &L);
 address_child CreateElmChild(infotypeChild in);
 void insertFirstChild(List_Child &L, address_child P);
