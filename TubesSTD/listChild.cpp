@@ -2,6 +2,7 @@
 #include "listChild.h"
 void createListChild(List_Child &L){
     L.first = NULL;
+    L.last = NULL;
 }
 
 void inputDataTahanan(List_Child L,infotypeChild &in){
@@ -48,7 +49,7 @@ void insertAfterChild(List_Child &L, address_child Prec, address_child P){
 
 void insertLastChild(List_Child &L, address_child P){
     if (L.first == NULL){
-        insertLastChild(L,P);
+        insertFirstChild(L,P);
     }else {
         L.last -> next = P;
         L.last = P;
@@ -89,8 +90,9 @@ void deleteFirstChild(List_Child &L, address_child &P){
     }
 }
 void deleteAfterChild(List_Child &L, address_child Prec, address_child &P){
-    P -> next = Prec -> next;
+    P = Prec -> next;
     Prec -> next = P -> next;
+    P -> next = NULL;
 }
 void deleteLastChild(List_Child &L, address_child &P){
     address_child Q = L.first;
