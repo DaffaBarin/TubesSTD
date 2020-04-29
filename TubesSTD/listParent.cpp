@@ -55,9 +55,8 @@ void insertAfterParent(List_Parent &L, address_parent Prec, address_parent P){
 
 void insertLastParent(List_Parent &L, address_parent P){
     P -> next = L.first;
-    P -> prev = L.first -> prev;
-    L.first -> prev -> next = P;
     L.first -> prev = P;
+    L.first = P;
 }
 
 void insertSortedParent(List_Parent &L, infotypeParent in){
