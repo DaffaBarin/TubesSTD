@@ -1,10 +1,11 @@
 #include <iostream>
 #include "listChild.h"
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void createListChild(List_Child &L){
     L.first = NULL;
     L.last = NULL;
 }
-
+//DAFFA BARIN 1301190369
 void inputDataTahanan(List_Child L,infotypeChild &in){
     cout<<"Nama tahanan: ";
     cin>>in.namaTahanan;
@@ -22,14 +23,14 @@ void inputDataTahanan(List_Child L,infotypeChild &in){
     cout<<"ID tahanan: "<<in.IDTahanan;
     in.countTahanan = 0;
 }
-
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 address_child CreateElmChild(infotypeChild X){
     address_child P = new child;
     P -> info = X;
     P -> next = NULL;
     return P;
 }
-
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void insertFirstChild(List_Child &L, address_child P){
     if (L.first == NULL) {
         L.first = P;
@@ -39,12 +40,12 @@ void insertFirstChild(List_Child &L, address_child P){
         L.first = P;
     }
 }
-
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void insertAfterChild(List_Child &L, address_child Prec, address_child P){
     P -> next = Prec -> next;
     Prec -> next = P;
 }
-
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void insertLastChild(List_Child &L, address_child P){
     if (L.first == NULL){
         insertFirstChild(L,P);
@@ -53,7 +54,7 @@ void insertLastChild(List_Child &L, address_child P){
         L.last = P;
     }
 }
-
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void insertSortedChild(List_Child &L, infotypeChild in){
     if (L.first != NULL) {
         if (findElmChild(L,in.namaTahanan) == NULL){
@@ -76,6 +77,7 @@ void insertSortedChild(List_Child &L, infotypeChild in){
         insertFirstChild(L,CreateElmChild(in));
     }
 }
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void deleteFirstChild(List_Child &L, address_child &P){
     if (L.first != L.last) {
         P = L.first;
@@ -87,11 +89,13 @@ void deleteFirstChild(List_Child &L, address_child &P){
         L.last = NULL;
     }
 }
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void deleteAfterChild(List_Child &L, address_child Prec, address_child &P){
     P = Prec -> next;
     Prec -> next = P -> next;
     P -> next = NULL;
 }
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void deleteLastChild(List_Child &L, address_child &P){
     address_child Q = L.first;
     while (Q -> next -> next != NULL) {
@@ -100,6 +104,7 @@ void deleteLastChild(List_Child &L, address_child &P){
     P = Q -> next;
     Q -> next = NULL;
 }
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void deleteSpesificChild(List_Child &L, string X){
     address_child P = findElmChild(L,X);
     if (L.first != NULL && P != NULL){
@@ -122,10 +127,11 @@ void deleteSpesificChild(List_Child &L, string X){
     }
     cout<<endl;
 }
-
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void deallocateChild(address_child &P){
     delete P;
 }
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 address_child findElmChild(List_Child &L, string X){
     address_child P = L.first;
     while (P != NULL) {
@@ -136,7 +142,7 @@ address_child findElmChild(List_Child &L, string X){
     }
     return NULL;
 }
-
+//MUHAMMAD KHIYARUS SYIAM 1301194242
 void printInfoChild(List_Child L){
     address_child P = L.first;
     while (P!=NULL){
@@ -148,7 +154,7 @@ void printInfoChild(List_Child L){
     }
     cout<<endl;
 }
-
+//DAFFA BARIN 1301190369
 string generatorIDChild(){
     int r;
     stringstream sss;

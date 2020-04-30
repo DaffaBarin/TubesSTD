@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    //MUHAMMAD KHIYARUS SYIAM 1301194242
     string any;
     int pilih;
     List_Parent List_Parent;
@@ -17,7 +18,8 @@ int main()
     createListParent(List_Parent);
     createListChild(List_Child);
     createListRelasi(List_Relasi);
-
+    //MUHAMMAD KHIYARUS SYIAM 1301194242
+    //DAFFA BARIN 1301190369
     do{ cout<<"************************************"<<endl;
         cout<<"         SELAMAT DATANG DI          "<<endl;
         cout<<"   Menu Administrasi Lapas Tahanan  "<<endl;

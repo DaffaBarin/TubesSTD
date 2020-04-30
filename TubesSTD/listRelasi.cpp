@@ -1,11 +1,12 @@
 #include "listRelasi.h"
 
 using namespace std;
-
+//DAFFA BARIN 1301190369
 void createListRelasi(List_Relasi &L){
     L.first = NULL;
     L.last = NULL;
 }
+//DAFFA BARIN 1301190369
 relateAddress CreateElmRelasi(address_parent P, address_child Q){
     relateAddress R = new Relasi;
     R -> lapas = P;
@@ -16,6 +17,7 @@ relateAddress CreateElmRelasi(address_parent P, address_child Q){
     Q -> info.countTahanan++;
     return R;
 }
+//DAFFA BARIN 1301190369
 void insertRelasi(List_Relasi &L, relateAddress R){
     if (L.first == NULL) {
         L.first = R;
@@ -26,7 +28,7 @@ void insertRelasi(List_Relasi &L, relateAddress R){
         L.last = R;
     }
 }
-
+//DAFFA BARIN 1301190369
 void deleteFirstRelasi(List_Relasi &L, relateAddress &R){
     if (L.first != L.last) {
         R = L.first;
@@ -40,6 +42,7 @@ void deleteFirstRelasi(List_Relasi &L, relateAddress &R){
     }
     deallocateRelasi(R);
 }
+//DAFFA BARIN 1301190369
 void deleteAfterRelasi(List_Relasi &L, relateAddress Prec, relateAddress &R){
     R = Prec -> next;
     Prec -> next = R -> next;
@@ -48,6 +51,7 @@ void deleteAfterRelasi(List_Relasi &L, relateAddress Prec, relateAddress &R){
     R -> next = NULL;
     deallocateRelasi(R);
 }
+//DAFFA BARIN 1301190369
 void deleteLastRelasi(List_Relasi &L, relateAddress &R){
     R = L.last;
     L.last = R -> prev;
@@ -55,6 +59,7 @@ void deleteLastRelasi(List_Relasi &L, relateAddress &R){
     L.last -> next = NULL;
     deallocateRelasi(R);
 }
+//DAFFA BARIN 1301190369
 void deleteSpesificRelasi(List_Relasi &L, address_parent P, address_child Q){
     relateAddress R = L.first;
     if (R != NULL){
@@ -77,6 +82,7 @@ void deleteSpesificRelasi(List_Relasi &L, address_parent P, address_child Q){
     }
     cout<<endl;
 }
+//DAFFA BARIN 1301190369
 relateAddress findElmRelasiParent(List_Relasi &L, string out){
     relateAddress R = L.first;
     while (R != NULL){
@@ -87,7 +93,7 @@ relateAddress findElmRelasiParent(List_Relasi &L, string out){
     }
     return NULL;
 }
-
+//DAFFA BARIN 1301190369
 void deleteAllRelasiParent(List_Relasi &L, address_parent P){
     relateAddress R;
     while (findElmRelasiParent(L,P->info.namaLapas) != NULL){
@@ -107,7 +113,7 @@ void deleteAllRelasiParent(List_Relasi &L, address_parent P){
         }
     }
 }
-
+//DAFFA BARIN 1301190369
 relateAddress findElmRelasiChild(List_Relasi &L, string out){
     relateAddress R = L.first;
     while (R != NULL){
@@ -118,7 +124,7 @@ relateAddress findElmRelasiChild(List_Relasi &L, string out){
     }
     return NULL;
 }
-
+//DAFFA BARIN 1301190369
 void deleteAllRelasiChild(List_Relasi &L, address_child Q){
     relateAddress R;
     while (findElmRelasiChild(L,Q->info.namaTahanan) != NULL){
@@ -138,7 +144,7 @@ void deleteAllRelasiChild(List_Relasi &L, address_child Q){
         }
     }
 }
-
+//DAFFA BARIN 1301190369
 void countRelasiByChild(List_Relasi L){
     relateAddress R = L.first;
     relateAddress P;
@@ -156,7 +162,7 @@ void countRelasiByChild(List_Relasi L){
         printRelasiByChild(L,P -> tahanan -> info.namaTahanan);
     }
 }
-
+//DAFFA BARIN 1301190369
 void printRelasiByChild(List_Relasi L, string out){
     relateAddress R = L.first;
     while (R != NULL){
@@ -167,7 +173,7 @@ void printRelasiByChild(List_Relasi L, string out){
     }
     cout<<endl;
 }
-
+//DAFFA BARIN 1301190369
 void countRelasiByParent(List_Relasi L){
     relateAddress R = L.first;
     relateAddress P;
@@ -186,7 +192,7 @@ void countRelasiByParent(List_Relasi L){
     }
 
 }
-
+//DAFFA BARIN 1301190369
 void printRelasiByParent(List_Relasi L, string out){
     relateAddress R = L.first;
     while (R != NULL){
@@ -197,7 +203,7 @@ void printRelasiByParent(List_Relasi L, string out){
     }
     cout<<endl;
 }
-
+//DAFFA BARIN 1301190369
 void printInfoRelasi(List_Relasi L){
     relateAddress R = L.first;
     while (R!=NULL){
@@ -207,7 +213,7 @@ void printInfoRelasi(List_Relasi L){
     }
     cout<<endl;
 }
-
+//DAFFA BARIN 1301190369
 void deallocateRelasi(relateAddress R){
     delete R;
 }
