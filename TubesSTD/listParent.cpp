@@ -7,13 +7,11 @@ void createListParent(List_Parent &L) {
 
 void inputDataLapas(List_Parent L, infotypeParent &in){
     cout<<"Nama Lapas: ";
-    cin.get();
-    getline(cin,in.namaLapas);
+    cin>>in.namaLapas;
     while (findElmParent(L , in.namaLapas) != NULL ) {
         cout<<"Lapas sudah ada. Input kembali."<<endl;
         cout<<"Nama Lapas: ";
-        cin.get();
-        getline(cin,in.namaLapas);
+        cin>>in.namaLapas;
     }
     cout<<"Ukuran Lapas: ";
     cin >> in.luasLapas;

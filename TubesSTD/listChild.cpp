@@ -7,13 +7,11 @@ void createListChild(List_Child &L){
 
 void inputDataTahanan(List_Child L,infotypeChild &in){
     cout<<"Nama tahanan: ";
-    cin.get();
-    getline(cin,in.namaTahanan);
+    cin>>in.namaTahanan;
     while (findElmChild(L,in.namaTahanan) != NULL ) {
         cout<<"Nama sudah ada. Input kembali."<<endl;
         cout<<"Nama tahanan: ";
-        cin.get();
-        getline(cin,in.namaTahanan);
+        cin>>in.namaTahanan;
     }
     cout<<"Usia tahanan: ";
     cin >> in.usiaTahanan;
@@ -130,10 +128,13 @@ void deallocateChild(address_child &P){
 }
 address_child findElmChild(List_Child &L, string X){
     address_child P = L.first;
-    while (P != NULL && P -> info.namaTahanan != X && P -> info.IDTahanan != X) {
+    while (P != NULL) {
+        if (P -> info.namaTahanan == X || P -> info.IDTahanan == X){
+            return P;
+        }
         P = P -> next;
     }
-    return P;
+    return NULL;
 }
 
 void printInfoChild(List_Child L){
